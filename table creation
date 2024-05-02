@@ -1,0 +1,56 @@
+CREATE TABLE User (
+    User_ID INT PRIMARY KEY,
+    User_Name VARCHAR(255),
+    Contact_No VARCHAR(20),
+    Age INT,
+    Address VARCHAR(255)
+);
+
+CREATE TABLE Reservation (
+    Reservation_ID INT PRIMARY KEY,
+    User_ID INT,
+    Arrival_Time DATETIME,
+    Departure_Time DATETIME,
+    No_Of_Person INT,
+    Seats INT,
+    Date DATE,
+    Destination VARCHAR(255),
+    From_Place VARCHAR(255),
+    To_Place VARCHAR(255),
+    FOREIGN KEY (User_ID) REFERENCES User(User_ID)
+);
+
+CREATE TABLE Bus (
+    Bus_No INT PRIMARY KEY,
+    Bus_Name VARCHAR(255),
+    Seats_Available INT,
+    Date DATE,
+    From_Place VARCHAR(255),
+    To_Place VARCHAR(255)
+);
+
+CREATE TABLE Admin (
+    Admin_ID INT PRIMARY KEY,
+    Admin_Name VARCHAR(255),
+    Contact_Person VARCHAR(255),
+    Phone_No VARCHAR(20),
+    Address VARCHAR(255)
+);
+
+CREATE TABLE Travel_Agency (
+    Agency_ID INT PRIMARY KEY,
+    Agency_Name VARCHAR(255),
+    Contact_Person VARCHAR(255),
+    Phone_No VARCHAR(20),
+    Address VARCHAR(255)
+);
+
+CREATE TABLE Flight (
+    Flight_ID INT PRIMARY KEY,
+    Flight_Name VARCHAR(255),
+    Departure_Time DATETIME,
+    Arrival_Time DATETIME,
+    Date DATE,
+    From_Place VARCHAR(255),
+    To_Place VARCHAR(255)
+);
